@@ -1,0 +1,133 @@
+.leftcolumn {
+    float: left;
+    width: 25%;
+    height: 100%;
+    padding: 0px 10px 15px 40px;
+}
+
+.rightcolumn {
+    float: left;
+    width: 75%;
+    height: 100%;
+    padding: 0px 25px 20px 10px;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.cards:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.cards {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.card{
+    height: 150px;
+    max-width: 450px;
+    margin: 10px 10px;
+    text-align: center;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.card .img{
+    height: 160px;
+    width: 225%;
+}
+.card .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.top-text .name{
+    font-size: 20px;
+    font-weight: 600;
+    color: #202020;
+    padding-top: 5px;
+  }
+.top-text .name a{
+    text-decoration: none;
+    color: black;
+  }
+.top-text .name a:hover{
+    font-size: 22px;
+    color: red;
+  }
+.top-text p{
+    font-size: 15px;
+    font-weight: 600;
+    color: grey;
+    line-height: 20px;
+    font-family: 'Open Sans', cursive;
+}
+.bottom-text .desc{
+    text-align: justify;
+    padding-top: 10px;
+    overflow: hidden;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+@media screen and (max-width: 800px) {
+    .leftcolumn {   
+        width: 30%;
+        padding: 0;
+        padding-right: 1px;
+    }
+    .rightcolumn{
+      width: 70%;
+      padding-left: 15px;
+    }
+    .card .img{
+        height: 130px;
+        width: 260%;
+    }
+    .card .img img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+  .top-text{
+      padding-top: 2px;
+    }
+  .top-text .title{
+      font-size: 16px;
+      font-weight:bold;
+      color: #202020;
+      text-align: start;
+      padding-left: 5px;
+    }
+  .top-text .title a{
+      text-decoration: none;
+      color: black;
+    }
+  .top-text .title a:hover{
+      font-weight: bolder;
+      font-size: 17px;
+      color: red;
+  }
+  .bottom-text .desc{
+      text-align: justify;
+      font-size: 13px;
+      color:black;
+      padding-left: 5px;
+      overflow: hidden;
+      display:-webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
+
+}
+

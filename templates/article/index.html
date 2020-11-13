@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block homeactive %}active{% endblock %}
+
+<!------------------------------ CSS ----------------------------------------------->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index1.css'%}">
+{% endblock %}
+<!---------------------------------- Body ------------------------------------------>
+{% block Body %}
+<div class="row">
+    <div class="leftcolumn">
+        <div class="cards">
+            {% for i in article %}
+            <div class="column">
+                <div class="card">
+                    <div class="img">
+                        <img src="/media/{{i.img1}}">
+                    </div>
+                    <div class="top-text">
+                        <div class="name">
+                            <a href="article{{i.id}}">{{i.heading}} </a>
+                        </div>
+                        <p>{{i.category}}</p>
+                    </div>
+                    <div class="bottom-text">
+                        <div class="text">
+                            {{i.title1_Description}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="rightcolumn">
+        <div class="cards">
+            <h2>Trending Articles</h2>
+            <div class="name">
+                {% for i in articleObj %}
+                <p>{{i.category}}</p>
+                <a href="article{{i.id}}">{{i.heading }} </a><br><br>
+                {% endfor %}
+                
+            </div>
+        </div>
+
+        <div class="cards">
+            <h2>Most Read</h2>
+            <div class="name">
+                {% for i in popularObj %}
+                <p>{{i.category}}</p>
+                <a href="article{{i.id}}">{{i.heading }} </a><br><br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

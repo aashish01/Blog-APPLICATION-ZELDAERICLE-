@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search Results{% endblock %}
+
+<!------------------------------ CSS ----------------------------------------------->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/blog.css'%}">
+<link rel="stylesheet" href="{% static 'css/msg.css'%}">
+{% endblock %}
+<!---------------------------------- Body ------------------------------------------>
+{% block Body %}
+
+{% if search|length < 1 %}
+    <div class="error">
+        There are no results for your search: <b>{{query}}</b> <br>
+        Check your spelling or try different keywords
+    </div>
+
+{% endif %}
+{% for i in search %}
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="cards"> 
+                <div class="column">
+                    <div class="card">
+                        <div class="img">
+                            <img src="/media/{{i.img1}}">
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="cards">
+                <div class="top-text">
+                    <p> By {{i.author}} </p>
+                    <p> {{i.date}} </p>
+                    <div class="name">
+                        <a href="article{{i.id}}">{{i.heading}} </a>
+                    </div>
+                </div>
+                <div class="bottom-text">
+                    <div class="desc">
+                        {{i.title1_Description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor%}
+
+{% endblock %}

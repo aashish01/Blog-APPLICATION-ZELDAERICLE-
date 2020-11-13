@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{articleObj.heading}}{% endblock %}
+
+<!------------------------------ CSS ----------------------------------------------->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/article0.css'%}">
+{% endblock %}
+<!---------------------------------- Body ------------------------------------------>
+{% block Body %}
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <div class="title">{{articleObj.heading}}</div>
+      <h4>BY {{articleObj.author}}, {{articleObj.date}}</span></h4>
+      <div class="img">
+        <img src="/media/{{articleObj.img1}}">
+      </div>
+      <!-------------------  Title 1  ------------------------------>
+      <h3>{{articleObj.title1}}</h3>
+      <p>{{articleObj.title1_Description}}</p>
+
+      <!-------------------  Image 2  ------------------------------>
+      <div class="img">
+        <img src="/media/{{articleObj.img2}}">
+      </div>
+
+      <!-------------------  Title 2  ------------------------------>
+      <h3>{{articleObj.title2}}</h3>
+      <p>{{articleObj.title2_Description}}</p>
+
+      <!-------------------  Image 3  ------------------------------>
+      <div class="img">
+        <img src="/media/{{articleObj.img3}}">
+      </div>
+      <!-------------------  Title 3  ------------------------------>
+      <h3>{{articleObj.title3}}</h3>
+      <p>{{articleObj.title3_Description}}</p>
+      <!-------------------  Title 4  ------------------------------>
+      <h3>{{articleObj.title4}}</h3>
+      <p>{{articleObj.title4_Description}}</p>
+      <!-------------------  Title 5  ------------------------------>
+      <h3>{{articleObj.title5}}</h3>
+      <p>{{articleObj.title5_Description}}</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Quick Facts</h2>
+      <table>
+        <tr>
+          <th>{{articleObj.QuickFact1}}</th>
+          <th>{{articleObj.QuickFact1Ans}}</th>
+        </tr>
+        <tr>
+          <td>{{articleObj.QuickFact2}}</td>
+          <td>{{articleObj.QuickFact2Ans}}</td>
+        </tr>
+        <tr>
+          <td>{{articleObj.QuickFact3}}</td>
+          <td>{{articleObj.QuickFact3Ans}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

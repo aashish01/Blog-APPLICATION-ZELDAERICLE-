@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Destination{% endblock %}
+{% block destinationactive %}active{% endblock %}
+
+<!------------------------------ CSS ----------------------------------------------->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/blog01.css'%}">
+{% endblock %}
+<!---------------------------------- Body ------------------------------------------>
+{% block Body %}
+{% for i in destinationObj %}
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="cards"> 
+                <div class="column">
+                    <div class="card">
+                        <div class="img">
+                            <img src="/media/{{i.img1}}">
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="cards">
+                <div class="top-text">
+                    <p> By {{i.author}} </p>
+                    <p> {{i.date}} </p>
+                    <div class="name">
+                        <a href="article{{i.id}}">{{i.heading}} </a>
+                    </div>
+                </div>
+                <div class="bottom-text">
+                    <div class="desc">
+                        {{i.title1_Description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor%}
+{% endblock %}
